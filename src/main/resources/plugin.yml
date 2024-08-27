@@ -1,4 +1,4 @@
-name: EMCCOM
+name: ASTRISCOM
 version: ${project.version}
 main: net.earthmc.emccom.EMCCOM
 api-version: '1.20'

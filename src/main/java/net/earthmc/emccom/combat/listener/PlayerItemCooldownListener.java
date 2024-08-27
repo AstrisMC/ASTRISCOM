@@ -15,10 +15,10 @@ public class PlayerItemCooldownListener implements Listener {
 
     @EventHandler
     public void onPlayerItemCooldown(PlayerItemCooldownEvent event) {
-        if (event.getType() != Material.ENDER_PEARL)
-            return;
-
-        // event.setCooldown(plugin.getConfig().getInt("ender_pearl_cooldown_ticks")); Fix later
-        event.setCooldown(240);
+        if (event.getType() == Material.ENDER_PEARL) {
+            event.setCooldown(plugin.getConfig().getInt("ender_pearl_cooldown_ticks", 240));
+        } else if (event.getType() == Material.GOLDEN_APPLE) {
+            event.setCooldown(plugin.getConfig().getInt("golden_apple_cooldown_ticks", 600));
+        }
     }
 }

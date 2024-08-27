@@ -5,6 +5,8 @@ import net.earthmc.emccom.combat.bossbar.BossBarTask;
 import net.earthmc.emccom.combat.listener.CombatListener;
 import net.earthmc.emccom.combat.listener.CommandListener;
 import net.earthmc.emccom.combat.listener.PlayerItemCooldownListener;
+import net.earthmc.emccom.combat.listener.PlayerItemConsumeListener;
+import net.earthmc.emccom.combat.listener.PlayerBlockPlaceListener;
 import net.earthmc.emccom.combat.listener.SpawnProtectionListener;
 import net.earthmc.emccom.commands.CombatPrefCommand;
 import net.earthmc.emccom.commands.CombatTagCommand;
@@ -41,6 +43,8 @@ public final class EMCCOM extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CombatListener(), this);
         getServer().getPluginManager().registerEvents(new CommandListener(),this);
         getServer().getPluginManager().registerEvents(new PlayerItemCooldownListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerItemConsumeListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerBlockPlaceListener(this), this);
         getServer().getPluginManager().registerEvents(new SpawnProtectionListener(), this);
     }
 
